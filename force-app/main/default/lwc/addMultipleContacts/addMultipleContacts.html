@@ -16,8 +16,12 @@
                     <td>Email</td>
                     <td>Gender</td>
                     <td>
-                        <lightning-button-icon icon-name="utility:add" title="Add New Contact"
-                        class="slds-m-left_xx-small" onclick={addNewClickHandler}></lightning-button-icon>
+                        <lightning-button-icon 
+                        icon-name="utility:add" 
+                        title="Add New Contact"
+                        class="slds-m-left_xx-small" 
+                        onclick={addNewClickHandler}>
+                    </lightning-button-icon>
                     </td>
                 </tr>
             </thead>
@@ -68,9 +72,13 @@
                         </lightning-combobox>
                         </td>
                         <td>
-                            <lightning-button-icon icon-name="utility:delete" title="Delete Contact"
-                            class="slds-m-left_xx-small" onclick={deleteClickHandler}
-                            data-temp-id={contact.tempId}></lightning-button-icon>
+                            <lightning-button-icon 
+                            icon-name="utility:delete" 
+                            title="Delete Contact" 
+                            class="slds-m-left_xx-small" 
+                            onclick={deleteClickHandler}
+                            data-temp-id={contact.tempId}>
+                        </lightning-button-icon>
                         </td>
                     </tr>
                 </template>

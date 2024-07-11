@@ -29,6 +29,7 @@ export default class AddMultipleContacts extends LightningElement {
         return this.genderPickListValues?.data?.values;
     }
 
+    //Onload function hook
     connectedCallback() {
         this.addNewClickHandler();
     }
