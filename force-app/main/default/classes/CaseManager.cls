@@ -1,4 +1,5 @@
 // Declaring a REST Service using annotations
+//and exposing all the endpoint for consumption
 
 @RestResource(urlMapping='/Cases/*')
 global with sharing class CaseManager {

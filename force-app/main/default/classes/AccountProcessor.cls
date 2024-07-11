@@ -23,4 +23,3 @@ public class AccountProcessor {
         AccountProcessor.countContacts(accountIds);
     }
 }
-https://youtube.googleapis.com/youtube/v3/videos?part=statistics&id={VIDEO_ID}&key={API_KEY}
