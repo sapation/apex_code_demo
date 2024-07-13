@@ -56,18 +56,16 @@ Program Code: (conditionalRendering.html)
         </template>
     </lightning-card>
 
-
-
-flag=false;
-
-handleChange(event)
-{
-    this.flag=event.target.checked;
-}
-
+    <script>
+        flag=false;
+        handleChange(event)
+        {
+            this.flag=event.target.checked;
+        }
+    </script>
 
 ## Iterator loop in LWC
-	Like for each, it is used for Looping. Advantage of iterator loop is that if provides some special properties.
+Like for each, it is used for Looping. Advantage of iterator loop is that if provides some special properties.
 
 Template Directive used:
 1.	iterator:iteratorName
@@ -91,7 +89,7 @@ The Lightning Web Components programming model has three decorators that add fun
 Syntax: 
 @decorator Property/function;
 e.g.
-@api msg=”Hello Parag”
+    @api msg=”Hello Parag”
 
 @api
 It is used to expose a variable or functions publicly and make properties reactive.
@@ -101,14 +99,15 @@ e.g. headerLabel will be header-label
 @track
 It is used to make variable private but reactive. Tracked properties are also called private reactive properties.
 Note: we can't access @track properties from outside as they are private and only accessible within its component only.
-To use it @track we have to import it first from lwc Eg. @track property_name=value
+To use it @track we have to import it first from lwc Eg. 
+    @track property_name=value
 
 @wire
 To read Salesforce data, Lightning web components use a reactive wire service. When the wire service provisions data, the component rerenders. Components use @wire in their JavaScript class to specify a wire adaptor or an Apex method. 
 
 Syntax
-import { adapterId } from 'adapterModule';
-@wire (adapterId, adapterConfig) propertyOrFunction;
+    import { adapterId } from 'adapterModule';
+    @wire (adapterId, adapterConfig) propertyOrFunction;
 
 -adapterId (Identifier)—The identifier of the wire adapter.
 
@@ -138,7 +137,7 @@ Note: this also uses all the Css Selectors.
 
 
 ## Data Communication between LWC Components
-	There are three types of communication between LWC Components:
+There are three types of communication between LWC Components:
 
 1.	Parent to Child Communication
 2.	Child to Parent Communication
@@ -163,6 +162,7 @@ It calls following method:
 2. Subscriber
 	Component which receives data.
 It calls following method:
+
     Subscribe(this.messageContext, MessageChannel, (parameter)=>{ Statements })
 
 3. Message Channel
