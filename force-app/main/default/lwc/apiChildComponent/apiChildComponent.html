@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <h1>This is the child component</h1>
+        <div>{headerLabel}</div>
+        <div>
+            <div>Counter: {counter}</div>
+            <div>
+                <lightning-button label="+" onclick={increment}></lightning-button>
+            </div>
+
+            <div>
+                <lightning-button label="-" onclick={decrement}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

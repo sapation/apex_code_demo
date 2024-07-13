@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Wire decorator to call Apex class">
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <div key={account.id}>
+                    <div>Name: {account.Name}</div>
+                    <div>Phone: {account.Phone}</div>
+                </div>
+            </template>
+            <template if:true={accounts.error}>
+                {accounts.error}
+            </template>
+        </template>
+
+        <div>
+            <div>Hello {name} !</div>
+            <div>
+                <lightning-input label="Enter Name" value="Sumaila">
+                </lightning-input>
+            </div>
+            <div>
+                <lightning-button label="Click Here" onclick={handleClick}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
