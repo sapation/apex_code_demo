@@ -2,6 +2,7 @@
     <lightning-card>
         <h1>This is the child component</h1>
         <div>{headerLabel}</div>
+        <h1>Job Tittle:  {jobTitle}</h1>
         <div>
             <div>Counter: {counter}</div>
             <div>
@@ -11,6 +12,11 @@
             <div>
                 <lightning-button label="-" onclick={decrement}></lightning-button>
             </div>
+        </div>
+        <div>
+            <lightning-input label="Enter name" onchange={handleChangeFirstName}></lightning-input>
+            <lightning-input label="Enter name" onchange={handleChangeLastName}></lightning-input>
+            <lightning-button label="Click Here" onclick={handleClick}></lightning-button>
         </div>
     </lightning-card>
 </template>

@@ -3,9 +3,9 @@
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
 
-## Tip and snipets for My Learning
+# Tips and snipets for My Learning
 
-How to delete custom Lightning Web Component
+## How to delete custom Lightning Web Component
 1. Go to Developer Console -> Query Editor.
 
 2. Write query 
@@ -15,12 +15,11 @@ SELECT ID, DeveloperName FROM LightningComponentBundle
 
 4. Click on Execute button.
 
-Data Binding in LWC
+## Data Binding in LWC
 Data Binding is the process by which values are bounded to the properties.
 
 <template>
     <lightning-card>
-
         <div>Hello {employee.Fname} {employee.Lname}</div>
         <div>Age: {employee.Age}</div>
         <div>City: {employee.City}</div>
@@ -28,20 +27,20 @@ Data Binding is the process by which values are bounded to the properties.
     </lightning-card>
 </template>
 
-Program Code: (helloWorld.js)
-import { LightningElement } from 'lwc';
+<script>
+    import { LightningElement } from 'lwc';
 
-export default class HelloWorld extends LightningElement {
-    employee={
-        Fname:'Parag',
-        Lname:'Jambhulkar',
-        Age:35,
-        City:'Pune'
-        }
-}
+    export default class HelloWorld extends LightningElement {
+        employee={
+            Fname:'Parag',
+            Lname:'Jambhulkar',
+            Age:35,
+            City:'Pune'
+            }
+    }
+</script>
 
-
-Conditional Rendering in HTML in  LWC | How to apply if-else in LWC
+## Conditional Rendering in HTML in  LWC | How to apply if-else in LWC
 Template Directives:
 1.	if:true
 2.	if:false
@@ -69,7 +68,7 @@ handleChange(event)
 }
 
 
-iterator loop in LWC
+## Iterator loop in LWC
 	Like for each, it is used for Looping. Advantage of iterator loop is that if provides some special properties.
 
 Template Directive used:
@@ -84,7 +83,7 @@ It has some special properties:
 	Returns true if it is last record.
 
 
-Decorators in LWC - Introduction
+## Decorators in LWC - Introduction
 The Lightning Web Components programming model has three decorators that add functionality to a property or function.
  
 @api
@@ -121,4 +120,61 @@ import { adapterId } from 'adapterModule';
 
 -propertyOrFunction—A private property or function that receives the stream of data from the wire service. If a property is decorated with @wire, the results are returned to the property’s data property or error property. If a function is decorated with @wire, the results are returned in an object with a data property and an error property.
 
+## Use of querySelector()
+The querySelector() method returns the first element that matches a CSS selector.
 
+CSS Selectors:
+1. By Tag
+e.g. querySelector(‘tagname’)
+2. By class name
+e.g. querySelector(‘.classname’)
+3. By Tag and class name
+e.g. querySelector(‘tagname.classname’)
+
+## Use of querySelectorAll()
+1.	The querySelectorAll() method returns all elements that matches a CSS selector(s).
+2.	The querySelectorAll() method returns a NodeList.
+3.	The querySelectorAll() method throws a SYNTAX_ERR exception if the selector(s) is invalid.
+
+Note: this also uses all the Css Selectors.
+
+
+## Data Communication between LWC Components
+	There are three types of communication between LWC Components:
+
+1.	Parent to Child Communication
+2.	Child to Parent Communication
+3.	Communication between unrelated components
+
+1. Parent to Child Communication
+	It is done by public properties using @api decorator.
+
+2. Child to Parent Communication
+	It is done by Custom Event.
+
+3. Communication between unrelated components
+It is done by Lightning Message Service (LMS).
+
+
+## Two Components:
+1. Publisher
+	Component which sends data.
+It calls following method:
+<script>
+    publish(this.messageContext, MessageChannel, payload)
+<script>
+
+2. Subscriber
+	Component which receives data.
+It calls following method:
+
+<script>
+    Subscribe(this.messageContext, MessageChannel, (parameter)=>
+    { Statements }
+    )
+</script>
+
+3. Message Channel
+i. Create folder messageChannels in dafault folder (force-app\main\default).
+ii. Create Message Channel messageChannelName.messageChannel-meta.xml 
+in folder messageChannels.

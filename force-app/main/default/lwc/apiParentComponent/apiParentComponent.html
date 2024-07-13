@@ -1,9 +1,15 @@
 <template>
-    <lightning-card>
+    <lightning-card title="Parent to child Data Communication">
         <h1>This is the parent component</h1>
-        <!-- <c-api-child-component header-label="Hello Iddrisu Sumaila"></c-api-child-component> -->
+
+        <c-api-child-component header-label="Hello Iddrisu Sumaila" job-title={jobName} ongetsearchevent={handleEvent}></c-api-child-component>
 
         <div>Name: {getName}</div>
         <div>Phone: {getPhone}</div>
+    </lightning-card>
+
+    <lightning-card>
+        <div>FirstName: {firstName}</div>
+        <div>LastName: {lastName}</div>
     </lightning-card>
 </template>
