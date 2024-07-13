@@ -9,7 +9,7 @@ Now that you’ve created a Salesforce DX project, what’s next? Here are some 
 1. Go to Developer Console -> Query Editor.
 
 2. Write query 
-SELECT ID, DeveloperName FROM LightningComponentBundle
+    SELECT ID, DeveloperName FROM LightningComponentBundle
 
 3. Select checkbox Use Tooling API.
 
@@ -18,16 +18,14 @@ SELECT ID, DeveloperName FROM LightningComponentBundle
 ## Data Binding in LWC
 Data Binding is the process by which values are bounded to the properties.
 
-<template>
     <lightning-card>
         <div>Hello {employee.Fname} {employee.Lname}</div>
         <div>Age: {employee.Age}</div>
         <div>City: {employee.City}</div>
         <h1>Hello World</h1>
     </lightning-card>
-</template>
 
-<script>
+
     import { LightningElement } from 'lwc';
 
     export default class HelloWorld extends LightningElement {
@@ -38,7 +36,7 @@ Data Binding is the process by which values are bounded to the properties.
             City:'Pune'
             }
     }
-</script>
+
 
 ## Conditional Rendering in HTML in  LWC | How to apply if-else in LWC
 Template Directives:
@@ -46,7 +44,7 @@ Template Directives:
 2.	if:false
 	
 Program Code: (conditionalRendering.html)
-<template>
+
     <lightning-card title="Conditional Rendering">
         <lightning-input type="checkbox" label="Show Details" onchange={handleChange}>
         </lightning-input>
@@ -57,7 +55,7 @@ Program Code: (conditionalRendering.html)
             This is False Block!
         </template>
     </lightning-card>
-</template>
+
 
 
 flag=false;
@@ -160,19 +158,12 @@ It is done by Lightning Message Service (LMS).
 1. Publisher
 	Component which sends data.
 It calls following method:
-<script>
     publish(this.messageContext, MessageChannel, payload)
-<script>
 
 2. Subscriber
 	Component which receives data.
 It calls following method:
-
-<script>
-    Subscribe(this.messageContext, MessageChannel, (parameter)=>
-    { Statements }
-    )
-</script>
+    Subscribe(this.messageContext, MessageChannel, (parameter)=>{ Statements })
 
 3. Message Channel
 i. Create folder messageChannels in dafault folder (force-app\main\default).
