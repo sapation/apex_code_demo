@@ -166,6 +166,5 @@ It calls following method:
     Subscribe(this.messageContext, MessageChannel, (parameter)=>{ Statements })
 
 3. Message Channel
-i. Create folder messageChannels in dafault folder (force-app\main\default).
-ii. Create Message Channel messageChannelName.messageChannel-meta.xml 
-in folder messageChannels.
+    i. Create folder messageChannels in dafault folder (force-app\main\default).
+    ii. Create Message Channel messageChannelName.messageChannel-meta.xml in folder messageChannels.
