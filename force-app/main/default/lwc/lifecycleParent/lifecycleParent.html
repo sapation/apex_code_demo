@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <c-lifecycle-child></c-lifecycle-child>
+
+        <template if:true={error}>
+            <b>Error has Occured</b>
+        </template>
+        <template if:false={error}>
+            <b>Error did not Occured</b>
+        </template>
+    </lightning-card>
+</template>

@@ -168,3 +168,29 @@ It calls following method:
 3. Message Channel
     i. Create folder messageChannels in dafault folder (force-app\main\default).
     ii. Create Message Channel messageChannelName.messageChannel-meta.xml in folder messageChannels.
+
+
+## Salesforce LWC Lifecycle Hooks
+A lifecycle hook is a callback method triggered at a specific phase of a component instance’s lifecycle.
+
+  -Lifecycle Hooks:
+1. constructor()
+2. connectedCallback()
+3. renderedCallback()
+4. render()
+5. disconnectedCallback()
+6. errorCallback(error, stack)
+
+Lifecycle Hook	When they are called	Description
+1	constructor() ->	Called when the component is created.	Flows from parent component to child component
+2	connectedCallback()	Called when the element is inserted into a document.	Flows from parent component to child component
+3	renderedCallback()	Called when a component is completely rendered on UI.
+
+This hook is called after the component gets rendered every time. Hence, it should be called cautiously.	Flows from child component to parent component
+4	render()	This hook is used to override the standard rendering functionality in Lightning web components & to update the UI.	This hook is not technically a lifecycle hook. 
+
+It is protected method on the LightningElement class.
+
+Flows from parent component to child component
+5	disconnectedCallback()	Called when the element is removed from a document or DOM.	Flows from parent component to child component
+6	errorCallback(error, stack)	Called when the component throws error in one of the lifecycle hooks.	error and stack are the two arguments. error is javascript native error object whereas stack is a string which gives error information
